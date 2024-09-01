@@ -32,7 +32,7 @@ class _QuizState extends State<Quiz> {
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const Pdfview(chapter:  1,subject: 'MATHEMATICS',)));
+                      MaterialPageRoute(builder: (context) => const Pdfview(material: 'PPT',chapter:  1,subject: 'MATHEMATICS',)));
                 },
                 child: const Text('View PDF')),
           ],

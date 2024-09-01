@@ -36,7 +36,21 @@ class ChaptersPage extends StatelessWidget {
               child: InkWell(
                 borderRadius: BorderRadius.circular(12),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>  Pdfview(chapter: index,subject: subject,)));
+                  Navigator.push(
+                      context,
+                      (material == 'Book')
+                          ? MaterialPageRoute(
+                              builder: (context) => Pdfview(
+                                    chapter: index,
+                                    subject: subject,
+                                    material: material,
+                                  ))
+                          : MaterialPageRoute(
+                              builder: (context) => Pdfview(
+                                    chapter: index,
+                                    subject: subject,
+                                    material: material,
+                                  )));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(16),

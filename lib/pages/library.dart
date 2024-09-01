@@ -1,3 +1,4 @@
+import 'package:adhyayan/pages/video_page.dart';
 import 'package:flutter/material.dart';
 import 'chapters.dart'; // Ensure this is the correct import for your `ChaptersPage`
 
@@ -113,12 +114,27 @@ class _LibraryPageState extends State<LibraryPage>
                                       onTap: () {
                                         Navigator.push(
                                           context,
-                                          MaterialPageRoute(
-                                            builder: (context) => ChaptersPage(
-                                              subject: subject,
-                                              material: material,
-                                            ),
-                                          ),
+                                          material == "Video"
+                                              ? MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      VideoPlaybackPage(
+                                                    subject: subjects[index],
+                                                  ),
+                                                )
+                                              : (material == "Book")
+                                                  ? MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          ChaptersPage(
+                                                        subject: subject,
+                                                        material: material,
+                                                      ),
+                                                    )
+                                                  : MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          ChaptersPage(
+                                                            subject: subject,
+                                                            material: material,
+                                                          )),
                                         );
                                       },
                                       child: Container(

@@ -4,7 +4,8 @@ import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 class Pdfview extends StatefulWidget {
   final int chapter;
   final String subject;
-  const Pdfview({super.key, required this.chapter,required this.subject});
+  final String material;
+  const Pdfview({super.key, required this.chapter,required this.subject, required this.material});
 
   @override
   State<Pdfview> createState() => _PdfviewState();
@@ -16,18 +17,33 @@ class _PdfviewState extends State<Pdfview> {
   @override
   void initState() {
     super.initState();
-    if(widget.subject=='MATHEMATICS')
-      sub='math';
-    else if(widget.subject=='SOCIAL STUDIES')
-      sub='sst';
-    else if(widget.subject=='SCIENCE')
-      sub='science';
-    else if(widget.subject=='ENGLISH')
-      sub='english';
-    else if(widget.subject=='HINDI')
-      sub='hindi';
+    if(widget.material == 'Book'){
+      if(widget.subject=='MATHEMATICS')
+        sub='math';
+      else if(widget.subject=='SOCIAL STUDIES')
+        sub='sst';
+      else if(widget.subject=='SCIENCE')
+        sub='science';
+      else if(widget.subject=='ENGLISH')
+        sub='english';
+      else if(widget.subject=='HINDI')
+        sub='hindi';
 
       url="https://xeonryzen.s3.amazonaws.com/8/${sub}/chapter${widget.chapter+1}.pdf";
+    }else if(widget.material == 'PPT'){
+      if(widget.subject=='MATHEMATICS')
+        sub='math';
+      else if(widget.subject=='SOCIAL STUDIES')
+        sub='sst';
+      else if(widget.subject=='SCIENCE')
+        sub='science';
+      else if(widget.subject=='ENGLISH')
+        sub='english';
+      else if(widget.subject=='HINDI')
+        sub='hindi';
+
+      url="https://xeonryzen.s3.amazonaws.com/8/${sub}/chapterppt${widget.chapter+1}.pdf";
+    }
 
   }
   @override
