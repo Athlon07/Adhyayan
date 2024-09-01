@@ -1,5 +1,6 @@
 import 'package:adhyayan/pages/notice.dart';
 import 'package:adhyayan/pages/profile.dart';
+import 'package:adhyayan/pages/quiz.dart';
 import 'package:adhyayan/pages/schedule.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
@@ -27,10 +28,11 @@ class _HomeScreenState extends State<HomeScreen> {
     return [
       const NoticePage(),
       const SchedulePage(),
+      const Quiz(),
       const LibraryPage(),
       const ProfilePage(
         name: 'Samarth Bansal',
-        schoolName: 'KuchBhi Public School',
+        schoolName: 'Kela Bansal School',
         className: '10th',
         gender: 'Male',
       ),
@@ -51,6 +53,22 @@ class _HomeScreenState extends State<HomeScreen> {
         activeColorPrimary: Colors.green,
         inactiveColorPrimary: Colors.grey,
       ),
+      PersistentBottomNavBarItem(
+  icon:  Container(
+    padding: const  EdgeInsets.only(bottom: 5,right:20, left:20), // Adjust padding for desired circle size
+    decoration: const BoxDecoration(
+      shape: BoxShape.circle,
+      color: Colors.green, 
+    ),
+    child:  const Icon(
+      Icons.book,
+      color: Colors.white, // Icon color inside the circle
+    ),
+  ),
+  title: "Quiz",
+  activeColorPrimary: Colors.green,
+  inactiveColorPrimary: Colors.grey,
+),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.library_books_rounded),
         title: "Resources",

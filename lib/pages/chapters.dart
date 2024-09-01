@@ -1,3 +1,4 @@
+import 'package:adhyayan/pages/pdfview.dart';
 import 'package:flutter/material.dart';
 
 class ChaptersPage extends StatelessWidget {
@@ -9,8 +10,7 @@ class ChaptersPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final chapters = ["Chapter 1", "Chapter 2", "Chapter 3"];
-
+    final chapters = ["Chapter 1", "Chapter 2", "Chapter 3", "Chapter 4"];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
@@ -36,7 +36,7 @@ class ChaptersPage extends StatelessWidget {
               child: InkWell(
                 borderRadius: BorderRadius.circular(12),
                 onTap: () {
-                  // Handle chapter click if needed
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>  Pdfview(chapter: index,subject: subject,)));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(16),

@@ -157,6 +157,7 @@ class ProfileDetailField extends StatelessWidget {
           color: Colors.green,
           fontWeight: FontWeight.bold,
         ),
+        
         filled: true,
         fillColor: Colors.white,
         border: OutlineInputBorder(
@@ -165,6 +166,11 @@ class ProfileDetailField extends StatelessWidget {
         ),
       ),
       controller: TextEditingController(text: value),
+      style: const TextStyle(
+        color: Colors.black54,
+        fontWeight: FontWeight.bold,
+        fontSize: 20,
+      ),
     );
   }
 }

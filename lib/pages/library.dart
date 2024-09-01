@@ -20,7 +20,7 @@ class _LibraryPageState extends State<LibraryPage>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(
-        milliseconds: 300,
+        milliseconds: 700,
       ),
     );
   }
@@ -72,7 +72,7 @@ class _LibraryPageState extends State<LibraryPage>
                 String subject = entry.value;
                 bool isSelected = selectedSubject == subject;
                 return AnimatedSize(
-                  duration: const Duration(milliseconds: 300),
+                  duration: const Duration(milliseconds: 700),
                   curve: Curves.easeInOut,
                   child: GestureDetector(
                     onTap: () {
