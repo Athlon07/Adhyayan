@@ -27,7 +27,7 @@ class _PdfviewState extends State<Pdfview> {
     else if(widget.subject=='HINDI')
       sub='hindi';
 
-      
+      url="https://xeonryzen.s3.amazonaws.com/8/${sub}/chapter${widget.chapter+1}.pdf";
 
   }
   @override
@@ -37,7 +37,6 @@ class _PdfviewState extends State<Pdfview> {
         title: const Text('PDF View'),
       ),
       body: SfPdfViewer.network(url),  
-      //SfPdfViewer.asset('assets/sample.pdf'),
     );
   }
 }
